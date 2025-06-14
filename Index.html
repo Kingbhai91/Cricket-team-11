@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cricket Team 11 - होम</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Cricket Team 11</h1>
+        <nav>
+            {% if 'user_id' in session %}
+                <a href="{{ url_for('dashboard') }}">डैशबोर्ड</a>
+                <a href="{{ url_for('logout') }}">लॉगआउट</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">लॉगिन</a>
+                <a href="{{ url_for('register') }}">रजिस्टर</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        <h2>अपनी फैंटेसी टीम बनाएं और जीतें इनाम!</h2>
+        <p>Cricket Team 11 में शामिल हों, मैच चुनें, टीम बनाएं और स्कोरिंग का आनंद लें।</p>
+        <a class="btn" href="{{ url_for('register') }}">अभी शामिल हों</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cricket Team 11</p>
+    </footer>
+</body>
+</html>
