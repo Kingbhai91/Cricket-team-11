@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>रजिस्टर - Cricket Team 11</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Cricket Team 11</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">होम</a>
+            <a href="{{ url_for('login') }}">लॉगिन</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>रजिस्टर करें</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <label>नाम:</label>
+            <input type="text" name="name" required>
+            
+            <label>ईमेल:</label>
+            <input type="email" name="email" required>
+            
+            <label>पासवर्ड:</label>
+            <input type="password" name="password" required>
+            
+            <button type="submit">रजिस्टर</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cricket Team 11</p>
+    </footer>
+</body>
+</html>
